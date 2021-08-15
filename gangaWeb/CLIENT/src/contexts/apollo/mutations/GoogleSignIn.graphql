@@ -1,0 +1,8 @@
+mutation GoogleSignIn($email: String!, $name: String!, $googleId: String!, $role: UserRole!) {
+    googleSignIn(email: $email, googleId: $googleId, name: $name, role: $role) {
+        token
+        user {
+            name
+        }
+    }
+}

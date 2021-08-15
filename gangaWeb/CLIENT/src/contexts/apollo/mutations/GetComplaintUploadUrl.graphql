@@ -1,0 +1,6 @@
+mutation GetComplaintUploadUrl($fileName: String!, $complaintId: String!) {
+    getComplaintUploadUrl(fileName: $fileName, complaintId: $complaintId) {
+        uploadUrl
+        downloadUrl
+    }
+}

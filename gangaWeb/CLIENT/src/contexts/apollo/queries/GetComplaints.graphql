@@ -1,0 +1,13 @@
+query GetComplaints($type: ComplaintStatus!, $offset: Int!) {
+    getComplaints(type: $type, offset: $offset) {
+        id
+        smail
+        complaint
+        floor
+        complaintStatus
+        description
+        complaintDate
+        url
+        resolvedDate
+    }
+}

@@ -1,0 +1,5 @@
+mutation SetComplaintDownloadUrl($id: String!, $url: String!) {
+    setComplaintDownloadUrl(data: { id: $id, url: $url }) {
+        id
+    }
+}

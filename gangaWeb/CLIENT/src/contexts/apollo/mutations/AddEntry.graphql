@@ -1,0 +1,10 @@
+mutation AddEntry($studentName: String!, $rollNumber: String!, $bookId: String!) {
+    addEntry(data: { studentName: $studentName, rollNumber: $rollNumber, bookId: $bookId }) {
+        studentName
+        rollNumber
+        issuedDate
+        book {
+            name
+        }
+    }
+}

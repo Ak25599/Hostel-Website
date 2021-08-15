@@ -1,0 +1,12 @@
+mutation ResolveComplaint($id: String!, $status: ComplaintStatus!) {
+    resolveComplaint(id: $id, status: $status) {
+        id
+        complaint
+        description
+        smail
+        floor
+        complaintDate
+        resolvedDate
+        complaintStatus
+    }
+}

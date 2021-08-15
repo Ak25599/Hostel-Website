@@ -1,0 +1,5 @@
+enum ApproveStatus {
+    PENDING
+    INPROGRESS
+    RESOLVED
+}

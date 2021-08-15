@@ -1,0 +1,12 @@
+query GetComplaint($id: String!) {
+    getComplaint(id: $id) {
+        smail
+        complaint
+        floor
+        complaintStatus
+        description
+        complaintDate
+        url
+        resolvedDate
+    }
+}

@@ -1,0 +1,13 @@
+query GetEntries ($offset: Int!) {
+    getEntries(offset: $offset) {
+        studentName
+        id
+        returnStatus
+        issuedDate
+        returnedDate
+        book {
+            name
+            bookid
+        }
+    }
+}

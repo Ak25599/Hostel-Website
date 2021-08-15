@@ -1,0 +1,12 @@
+mutation AddExit($id: String!) {
+    addExit(id: $id) {
+        studentName
+        rollNumber
+        issuedDate
+        returnedDate
+        book {
+            name
+            bookid
+        }
+    }
+}

@@ -1,0 +1,10 @@
+mutation LitSecLogin($email: String!, $password: String!) {
+    litSecLogin(email: $email, password: $password) {
+        token
+        user {
+            id
+            role
+            email
+        }
+    }
+}

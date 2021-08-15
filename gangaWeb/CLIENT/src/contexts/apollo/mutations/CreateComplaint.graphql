@@ -1,0 +1,21 @@
+mutation CreateComplaint(
+    $description: String
+    $complaint: String!
+    $roomNumber: String
+    $floor: String!
+) {
+    createComplaint(
+        data: {
+            description: $description
+            complaint: $complaint
+            roomNumber: $roomNumber
+            floor: $floor
+        }
+    ) {
+        id
+        complaint
+        description
+        smail
+        floor
+    }
+}

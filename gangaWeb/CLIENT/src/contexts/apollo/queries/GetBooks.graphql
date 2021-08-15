@@ -1,0 +1,15 @@
+query GetBooks($type: String!) {
+    getBooks(type: $type) {
+        name
+        bookid
+        status
+        id
+        register {
+            id
+            returnStatus
+            book {
+                id
+            }
+        }
+    }
+}

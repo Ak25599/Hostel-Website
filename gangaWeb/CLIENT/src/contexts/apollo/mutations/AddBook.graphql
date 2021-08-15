@@ -1,0 +1,32 @@
+mutation AddBook(
+    $name: String!
+    $genre: String!
+    $language: String!
+    $year: String!
+    $publisher: String!
+    $isbn: String!
+    $bookId: String!
+    $authorId: String!
+) {
+    addBook(
+        data: {
+            name: $name
+            genre: $genre
+            language: $language
+            year: $year
+            publisher: $publisher
+            isbn: $isbn
+            bookId: $bookId
+            authorId: $authorId
+        }
+    ) {
+        name
+        genre
+        language
+        year
+        publisher
+        isbn
+        bookid
+        id
+    }
+}

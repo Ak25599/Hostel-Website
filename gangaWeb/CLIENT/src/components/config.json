@@ -1,0 +1,24 @@
+{
+    "window.zoomLevel": 1,
+    "prettier.disableLanguages": [],
+    "emmet.triggerExpansionOnTab": true,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "files.associations": {
+        "*.html": "html"
+    },
+    "editor.formatOnType": true,
+    "git.confirmSync": false,
+    "typescript.updateImportsOnFileMove.enabled": "never",
+    "workbench.colorTheme": "Atom One Dark",
+    "javascript.format.semicolons": "remove",
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

@@ -1,0 +1,83 @@
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id                    String         @default(cuid()) @id
+  name                  String
+  email                 String         @unique()
+  password              String
+  role                  UserRole
+  googleId              String?
+  
+ }
+
+
+model Author {
+  id       String     @default(cuid()) @id
+  name     String
+  book     Book[]     @relation("booksAuthored")
+}
+
+model Book {
+  bookid      String        @unique()
+  genre       String
+  id          String        @default(cuid()) @id
+  isbn        String
+  language    String
+  name        String
+  publisher   String
+  status      BookStatus   @default(AVAILABLE)
+  year        String
+  register    Register[]    @relation("bookHandled")
+  authoredBy  Author        @relation("booksAuthored", fields: [authorId], references: [id])
+  authorId    String
+
+}
+model Register {
+  id            String        @default(cuid()) @id
+  issuedDate   DateTime?     @default(now())
+  returnedDate DateTime?
+  returnStatus Boolean       @default(false)
+  rollNumber   String
+  studentName  String
+  bookId        String
+  book          Book          @relation("bookHandled",fields: [bookId], references: [bookid])
+}
+
+model Complaint {
+  id              String        @default(cuid()) @id
+  smail           String        
+  complaint       String
+  floor           String
+  complaintStatus ComplaintStatus    @default(PENDING)
+  complaintDate   DateTime?     @default(now())
+  resolvedDate    DateTime?
+  description     String?
+  roomNumber      String?
+  url           String? 
+}
+
+enum BookStatus {
+  AVAILABLE
+  ISSUED
+}
+
+enum ComplaintStatus {
+  PENDING
+  INPROGRESS
+  RESOLVED
+}
+
+enum UserRole {
+  LITSEC
+  ADMIN
+  STUDENT
+}
+
